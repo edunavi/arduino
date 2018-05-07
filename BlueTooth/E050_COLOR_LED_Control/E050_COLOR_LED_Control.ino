@@ -64,7 +64,7 @@ void parsecolor(String str) {
 
 void ledstatus() {
   if ( led_status[0] == 0 ) {
-    setcolor(255, 0, 0);
+    setcolor(0, 0, 0);
   }
   else {
     setcolor(led_status[1], led_status[2], led_status[3] );
