@@ -1,11 +1,12 @@
 #include <SoftwareSerial.h>
 
-#define rxPin 10
-#define txPin 11
+#define rxPin 2
+#define txPin 3
 
 // set up a new serial port
 SoftwareSerial BluetoothSerial =  SoftwareSerial(rxPin, txPin);
-String bluetoothName = "TEST_HC_06";
+String bluetoothName = "INK94_HC_06";
+String password = "1234";
 
 void setup()  {
   Serial.begin(9600);
@@ -22,6 +23,8 @@ void setup()  {
   BluetoothSerial.print("AT+NAME" + bluetoothName);
   waitForResponse();
 
+  BluetoothSerial.print("AT+PIN" + password);
+  waitForResponse();
   Serial.println("Done.");
 }
 
